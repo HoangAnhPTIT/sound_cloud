@@ -1,0 +1,6 @@
+{
+  "appTitle": "sound_cloud",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
