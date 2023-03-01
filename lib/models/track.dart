@@ -1,6 +1,8 @@
 import 'media.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import 'user.dart';
+
 part 'track.g.dart';
 
 @JsonSerializable()
@@ -9,8 +11,13 @@ class Track {
   final String artworkUrl;
   final String title;
   final Media media;
+  final User user;
+  @JsonKey(name: 'playback_count')
+  final num playbackCount;
+  final num duration;
 
-  Track(this.artworkUrl, this.title, this.media);
+  Track(this.artworkUrl, this.title, this.media, this.user, this.playbackCount,
+      this.duration);
 
   factory Track.fromJson(Map<String, dynamic> json) => _$TrackFromJson(json);
 
