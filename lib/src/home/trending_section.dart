@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:sound_cloud/models/track.dart';
 
-import '../../converters/convert_playback_count.dart';
+import '../../converters/converter.dart';
 
 class TrendingSection extends StatefulWidget {
   const TrendingSection({super.key});
@@ -43,6 +43,7 @@ class _TrendingSectionState extends State<TrendingSection> {
 
   @override
   Widget build(BuildContext context) {
+    const titleColor = Color.fromRGBO(102, 102, 102, 1);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -63,7 +64,7 @@ class _TrendingSectionState extends State<TrendingSection> {
                 return Center(child: Text('Error: ${snapshot.error}'));
               } else {
                 return Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.only(left: 12, right: 12, top: 12),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: snapshot.data!
@@ -80,21 +81,99 @@ class _TrendingSectionState extends State<TrendingSection> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              e.title,
+                                            Text(e.title,
+                                                style: const TextStyle(
+                                                    fontSize: 14,
+                                                    fontWeight:
+                                                        FontWeight.w700)),
+                                            Container(
+                                              margin:
+                                                  const EdgeInsets.only(top: 4),
+                                              child: Text(e.user.username,
+                                                  style: const TextStyle(
+                                                      color: titleColor,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w700)),
                                             ),
-                                            Text(e.user.username),
-                                            Row(
-                                              children: [
-                                                const Icon(Icons.play_arrow),
-                                                Text(ConvertPlaybackCount
-                                                    .handler(e.playbackCount)),
-                                                const Icon(
-                                                  Icons.circle,
-                                                  size: 3,
+                                            Container(
+                                              margin:
+                                                  const EdgeInsets.only(top: 3),
+                                              child: SizedBox(
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.34,
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    const Icon(
+                                                      Icons.play_arrow,
+                                                      color: titleColor,
+                                                      size: 18,
+                                                    ),
+                                                    Text(
+                                                      ConvertPlaybackCount
+                                                          .handler(
+                                                              e.playbackCount),
+                                                      style: const TextStyle(
+                                                          fontSize: 13,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: titleColor),
+                                                    ),
+                                                    Container(
+                                                      margin:
+                                                          const EdgeInsets.only(
+                                                              top: 5),
+                                                      child: const Icon(
+                                                        Icons.circle,
+                                                        size: 2,
+                                                        color: titleColor,
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      ConvertTrackDudations.formatedTime(
+                                                          timeInSecond: Duration(
+                                                                  milliseconds: e
+                                                                      .duration
+                                                                      .toInt())
+                                                              .inSeconds
+                                                              .toInt()),
+                                                      style: const TextStyle(
+                                                          fontSize: 13,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: titleColor),
+                                                    ),
+                                                    Container(
+                                                      margin:
+                                                          const EdgeInsets.only(
+                                                              top: 5),
+                                                      child: const Icon(
+                                                          Icons.circle,
+                                                          size: 2,
+                                                          color: titleColor),
+                                                    ),
+                                                    Text(
+                                                      ConvertDateDiffToDynamicDate
+                                                          .handler(DateTime
+                                                                  .now()
+                                                              .difference(
+                                                                  DateTime.parse(
+                                                                      e.lastModified))
+                                                              .inDays),
+                                                      style: const TextStyle(
+                                                          fontSize: 13,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: titleColor),
+                                                    )
+                                                  ],
                                                 ),
-                                                // Text((TimeUnit.MILLISECONDS.toMinutes(millis))
-                                              ],
+                                              ),
                                             )
                                           ]),
                                     )
@@ -107,6 +186,18 @@ class _TrendingSectionState extends State<TrendingSection> {
             }
           },
         ),
+        Container(
+          margin: const EdgeInsets.only(left: 12, right: 12),
+          width: MediaQuery.of(context).size.width,
+          child: const ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.black)),
+              onPressed: null,
+              child: Text(
+                'Create a free account',
+                style: TextStyle(color: Colors.white, fontSize: 14),
+              )),
+        )
       ],
     );
   }

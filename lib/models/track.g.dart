@@ -7,16 +7,21 @@ part of 'track.dart';
 // **************************************************************************
 
 Track _$TrackFromJson(Map<String, dynamic> json) => Track(
-    json['artwork_url'] as String,
-    json['title'] as String,
-    Media.fromJson(json['media'] as Map<String, dynamic>),
-    User.fromJson(json['user'] as Map<String, dynamic>),
-    json['playback_count'] as num,
-    json['duration'] as num);
+      json['artwork_url'] as String,
+      json['title'] as String,
+      Media.fromJson(json['media'] as Map<String, dynamic>),
+      User.fromJson(json['user'] as Map<String, dynamic>),
+      json['playback_count'] as num,
+      json['duration'] as num,
+      json['last_modified'] as String,
+    );
 
 Map<String, dynamic> _$TrackToJson(Track instance) => <String, dynamic>{
       'artwork_url': instance.artworkUrl,
       'title': instance.title,
       'media': instance.media,
       'user': instance.user,
+      'playback_count': instance.playbackCount,
+      'duration': instance.duration,
+      'last_modified': instance.lastModified,
     };

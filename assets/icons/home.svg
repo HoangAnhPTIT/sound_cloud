@@ -1,0 +1,10 @@
+<svg class="NavBar_IconDefaultColor__2SEUJ" height="32" viewBox="0 0 32 32"
+  xmlns="http://www.w3.org/2000/svg" aria-hidden="false">
+  <title>Home</title>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M16 3.078 30.436 13.39l-.872 1.22L16 4.922 2.436 14.61l-.872-1.22L16 3.078Z"
+    fill="currentColor"></path>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M4.25 27.5V12h1.5v15.25h5.5V21a4.75 4.75 0 0 1 9.5 0v6.25h5.5V12h1.5v15.5c0 .69-.56 1.25-1.25 1.25h-7.25V21a3.25 3.25 0 0 0-6.5 0v7.75H5.5c-.69 0-1.25-.56-1.25-1.25Z"
+    fill="currentColor"></path>
+</svg>

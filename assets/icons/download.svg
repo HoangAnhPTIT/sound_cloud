@@ -1,0 +1,9 @@
+<svg class="NavBar_IconDefaultColor__2SEUJ" height="32" viewBox="0 0 32 32" fill="none"
+  xmlns="http://www.w3.org/2000/svg" aria-hidden="false">
+  <title>Download</title>
+  <path d="m16 23.06-5.53-5.53 1.06-1.06 3.72 3.72V9h1.5v11.19l3.72-3.72 1.06 1.06L16 23.06Z"
+    fill="currentColor"></path>
+  <path
+    d="M16 29c7.18 0 13-5.82 13-13S23.18 3 16 3 3 8.82 3 16s5.82 13 13 13Zm0-1.5C9.649 27.5 4.5 22.351 4.5 16S9.649 4.5 16 4.5 27.5 9.649 27.5 16 22.351 27.5 16 27.5Z"
+    fill="currentColor"></path>
+</svg>

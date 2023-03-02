@@ -1,0 +1,7 @@
+<svg class="NavBar_IconDefaultColor__2SEUJ" height="32" viewBox="0 0 32 32"
+  xmlns="http://www.w3.org/2000/svg" aria-hidden="false">
+  <title>Feed</title>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M4.25 14.5c0-.69.56-1.25 1.25-1.25h21c.69 0 1.25.56 1.25 1.25v13c0 .69-.56 1.25-1.25 1.25h-21c-.69 0-1.25-.56-1.25-1.25v-13Zm1.5.25v12.5h20.5v-12.5H5.75ZM8.25 9A.75.75 0 0 1 9 8.25h14a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9ZM11.25 4a.75.75 0 0 1 .75-.75h8a.75.75 0 0 1 0 1.5h-8a.75.75 0 0 1-.75-.75Z"
+    fill="currentColor"></path>
+</svg>

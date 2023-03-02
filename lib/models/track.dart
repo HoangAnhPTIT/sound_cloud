@@ -15,9 +15,11 @@ class Track {
   @JsonKey(name: 'playback_count')
   final num playbackCount;
   final num duration;
+  @JsonKey(name: 'last_modified')
+  final String lastModified;
 
   Track(this.artworkUrl, this.title, this.media, this.user, this.playbackCount,
-      this.duration);
+      this.duration, this.lastModified);
 
   factory Track.fromJson(Map<String, dynamic> json) => _$TrackFromJson(json);
 
